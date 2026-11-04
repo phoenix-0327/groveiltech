@@ -40,7 +40,7 @@ export const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white text-[#171717] font-sans antialiased selection:bg-brand-100 selection:text-brand-900 flex flex-col justify-between">
+    <div className="min-h-screen bg-[#0A0A0A] text-[#E5E5E5] font-sans antialiased selection:bg-brand-500 selection:text-black flex flex-col justify-between">
       
       {/* Sticky Navigation */}
       <Navbar onStartProject={scrollToContact} />

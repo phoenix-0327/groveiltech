@@ -2,24 +2,25 @@ import type { Project, ServiceItem, CapabilityItem, ProcessStep } from '../types
 
 export const COMPANY_INFO = {
   name: "GROVEIL",
-  tagline: "THE INVISIBLE SHIELD ALL OVER THE FIELD",
+  tagline: "The Invisible Shield All Over The Field",
   descriptor: "SOFTWARE DEVELOPMENT STUDIO · COIMBATORE, INDIA",
-  subheading: "Founded by students building practical technology for real-world problems.",
+  subheading: "Building practical technology for real-world problems.",
   location: "Coimbatore, Tamil Nadu, India",
   email: "groveiltechnology@gmail.com",
   contactPhone: "+91 (0) 422 · Coimbatore Studio",
-  githubUrl: "https://github.com",
+  githubUrl: "https://github.com/phoenix-0327/groveiltech",
   linkedinUrl: "https://linkedin.com",
   collegeAffiliation: "PSG College of Arts & Science / Coimbatore Student Consortium",
+  pilotAvailability: "2–3 partners per academic term",
 };
 
 export const SERVICES: ServiceItem[] = [
   {
     number: "01",
     title: "Web Applications & Portals",
-    description: "Custom portals with authentication, user roles, dashboards and administrative tools.",
+    description: "Custom portals, role-based access control, administrative panels and real-time synchronization.",
     deliverables: [
-      "Role-based access controls (RBAC)",
+      "Role-based access control (RBAC)",
       "High-throughput administrative panels",
       "Real-time database sync & API integrations",
       "Secure authentication & session handling"
@@ -29,66 +30,69 @@ export const SERVICES: ServiceItem[] = [
   {
     number: "02",
     title: "Mobile Applications",
-    description: "Android and iOS applications built using Flutter and Expo.",
+    description: "Cross-platform Flutter and React Native applications with barcode scanning and sensor integration.",
     deliverables: [
       "Cross-platform Flutter & React Native / Expo apps",
-      "Camera & barcode/QR hardware integration",
-      "Offline-first sync & local SQLite storage",
-      "Play Store & App Store deployment pipelines"
+      "Sub-100ms camera barcode & QR decoding",
+      "Offline-first local SQLite cache & auto-sync",
+      "Hardware sensor Bluetooth & WiFi telemetry"
     ],
     icon: "Smartphone"
   },
   {
     number: "03",
-    title: "Business Automation",
-    description: "Email alerts, automated reminders, Excel imports and exports, and workflow automation.",
+    title: "Automation & Hardware Integration",
+    description: "ESP32, Raspberry Pi firmware, automated email dispatchers and sensor telemetry.",
     deliverables: [
-      "Automated transactional emails & reminder triggers",
-      "High-volume Excel & CSV batch processing (14k+ rows)",
-      "Webhook listeners & scheduled cron triggers",
-      "Audit logs & error recovery routines"
+      "Microcontroller firmware (ESP32-S3, Raspberry Pi 5)",
+      "Automated transactional emails & scheduled cron triggers",
+      "Multi-modal sensor fusion (acoustic, thermal, VOC gas)",
+      "Cellular 4G LTE IoT telemetry & remote diagnostics"
     ],
     icon: "Cpu"
   },
   {
     number: "04",
-    title: "Dashboards & Reporting",
-    description: "Data visualizations, leaderboards, reports and actionable insights.",
+    title: "Dashboards & Analytics",
+    description: "Live leaderboards, metric visualizations and Excel/CSV batch exports.",
     deliverables: [
-      "Interactive departmental leaderboards",
-      "Automated PDF & XLSX compliance reports",
-      "Real-time analytics & trend charts",
-      "Granular drill-downs by department & student"
+      "Real-time weighted ranking engines & leaderboards",
+      "High-volume Excel & CSV batch processing (14k+ rows)",
+      "Interactive data visualizations & audit feeds",
+      "Exportable compliance summaries & PDF reports"
     ],
     icon: "BarChart3"
   }
 ];
 
 export const TECH_STACK = [
-  { name: "Flutter", role: "Mobile Engines" },
   { name: "React", role: "Frontend UI" },
-  { name: "Expo", role: "Cross-Platform" },
-  { name: "Supabase", role: "Backend & Auth" },
-  { name: "Netlify", role: "Edge Hosting" },
-  { name: "GitHub", role: "CI/CD & Code" },
-  { name: "Python", role: "Vision & Automation" },
+  { name: "TypeScript", role: "Type Safety" },
+  { name: "Tailwind CSS", role: "Design System" },
+  { name: "Vite", role: "Build Tooling" },
+  { name: "Supabase", role: "PostgreSQL & Auth" },
+  { name: "PostgreSQL", role: "Relational DB" },
+  { name: "Flutter", role: "Mobile SDK" },
   { name: "Node.js", role: "Server Runtime" },
+  { name: "ESP32-S3", role: "Edge Hardware" },
+  { name: "Raspberry Pi 5", role: "Edge AI Compute" },
 ];
 
 export const PROJECTS: Project[] = [
   {
     id: "groveil",
-    name: "Groveil",
+    name: "GROVEIL",
     status: "CONCEPT",
-    title: "Palm health, checked before it’s too late.",
-    description: "Groveil is an autonomous rover and trunk-climbing system that patrols coconut plantations row by row. It listens for hidden borers inside palm trunks, inspects crown leaves up close, and gives farmers expert-verified advice for each tree.",
+    title: "Palm health, checked before it's too late.",
+    description: "An autonomous ground rover and trunk-climbing inspection system designed for coconut plantations. It listens for hidden borers, inspects crown leaves and provides farmers with actionable health insights.",
     features: [
-      "Multi-height trunk acoustic sensing for hidden borers",
-      "Close-up crown leaf inspection by trunk climbing",
-      "4-layer sensor fusion: acoustic, thermal/NIR, VOC gas and palm history",
-      "Per-palm health history that flags changes from each tree’s own baseline",
-      "Geotagged palm-by-palm health map over 4G",
-      "Expert-reviewed advice and containment steps, with the owner deciding on treatment"
+      "Multi-height acoustic stethoscope",
+      "0.8–3.2 kHz borer feed detection",
+      "MLX90640 thermal crown imaging",
+      "NoIR camera",
+      "BME688 AI VOC fingerprinting",
+      "Geotagged palm health mapping",
+      "4G LTE connectivity"
     ],
     technology: [
       "Raspberry Pi 5",
@@ -117,26 +121,26 @@ export const PROJECTS: Project[] = [
     id: "attendhub",
     name: "AttendHub",
     status: "LIVE",
-    title: "Attendance, without the paperwork.",
-    description: "AttendHub is a QR and barcode-based attendance management platform that helps staff record student attendance through smartphone scanning.",
+    title: "Attendance without the paperwork.",
+    description: "AttendHub is a QR and barcode-based attendance management platform that helps staff record student attendance through smartphone scanning with sub-100ms sync.",
     features: [
-      "QR and barcode scanning",
-      "Scan confirmation and progress indicators",
+      "QR and barcode mobile camera scanner",
+      "Instant attendance confirmation & sync indicators",
       "Torch support for low-light halls",
       "Excel import supporting 14,000+ student records",
       "Attendance export in standard spreadsheet formats",
-      "Role-based access (Faculty, Hod, Admin)",
-      "Android and web applications",
+      "Role-based access (Faculty, HoD, Administrator)",
+      "Android and responsive web applications",
       "Crash diagnostics and offline queueing"
     ],
     technology: ["Flutter", "Supabase", "Netlify"],
-    highlight: "Launched at our own college.",
+    highlight: "14,000+ records · Sub-100ms reported sync",
     category: "live",
     mockupType: "attendhub",
     fullArchitecture: {
       problem: "Massive college symposiums and daily hall entries caused long queues and manual paper ledger errors across thousands of students.",
       solution: "Engineered an ultra-fast Flutter scanner app syncing with Supabase in sub-100ms, paired with a web admin portal for bulk uploads.",
-      metrics: ["14,000+ Records handled", "Sub-100ms Barcode Read", "Zero Paper Logs"],
+      metrics: ["14,000+ Records Handled", "Sub-100ms Barcode Read", "Zero Paper Logs"],
       stack: [
         { layer: "Mobile Scanner", tools: "Flutter (Android/iOS), Camera API with Torch toggle" },
         { layer: "Backend Database", tools: "Supabase (PostgreSQL with Row Level Security)" },
@@ -149,18 +153,18 @@ export const PROJECTS: Project[] = [
     id: "iic-tracker",
     name: "IIC Tracker",
     status: "PILOT LAUNCH",
-    title: "Bringing every department into one place.",
-    description: "IIC Tracker centralizes departmental activity submissions, calculates activity counts and displays a department-wise leaderboard.",
+    title: "Every department. One clear picture.",
+    description: "IIC Tracker centralizes departmental activity submissions, calculates weighted activity ranks and displays a live department-wise leaderboard for college administration.",
     features: [
       "Activity submissions with document uploads",
       "Department-wise tracking & activity breakdown",
       "Automated leaderboard updated in real-time",
-      "Automated email notifications to coordinators",
+      "Automated HoD reminder emails before deadlines",
       "Remark alerts and peer review notes",
-      "Missing submission reminders before deadline"
+      "Missing submission monitoring & compliance stats"
     ],
     technology: ["Web Application", "Supabase", "Email Automation"],
-    highlight: "Pilot launch at PSG College of Arts & Science.",
+    highlight: "Pilot launch across 24 departments at PSG CAS",
     category: "live",
     mockupType: "iic",
     fullArchitecture: {
@@ -179,24 +183,24 @@ export const PROJECTS: Project[] = [
     id: "nutri360",
     name: "Nutri360",
     status: "IN DEVELOPMENT",
-    title: "Connecting applications with intelligent hardware.",
-    description: "Nutri360 is a child nutrition and growth screening platform combining mobile applications, web technology, a Supabase backend and connected ESP32 hardware.",
+    title: "Connected technology for child growth screening.",
+    description: "Nutri360 is a child nutrition and growth screening platform combining an Expo mobile app with connected ESP32 stadiometer and weight hardware to calculate WHO growth benchmarks.",
     features: [
       "Hardware-to-Cloud telemetry over Bluetooth & WiFi",
-      "Digital stadiometer & weight sensor integration",
-      "WHO growth standard percentile calculations",
-      "Offline field survey logging with cloud sync",
+      "Digital ESP32 stadiometer & load cell integration",
+      "Automated WHO growth standard percentile calculations",
+      "Offline field survey logging with automatic cloud sync",
       "Role-based healthcare worker mobile dashboard",
-      "Exportable clinical nutritional health cards"
+      "Exportable clinical nutritional health summary cards"
     ],
     technology: ["Expo", "Supabase", "ESP32"],
-    highlight: "Field-tested physical sensor integration.",
+    highlight: "Connected sensor hardware & growth analytics",
     category: "ai-iot",
     mockupType: "nutri360",
     fullArchitecture: {
       problem: "Rural and suburban child health camps rely on manual height-weight measurement tapes and paper charts, leading to calculation mistakes in stunting/wasting data.",
       solution: "Paired custom ESP32 ultrasonic and strain-gauge hardware with an Expo mobile app that instantly plots child growth curves against WHO benchmarks.",
-      metrics: ["Instant WHO percentile calculation", "ESP32 telemetry stream", "Automated nutrition risk flagging"],
+      metrics: ["Instant WHO Percentile Calculation", "ESP32 Telemetry Stream", "Automated Nutrition Risk Flagging"],
       stack: [
         { layer: "Embedded Device", tools: "ESP32 Microcontroller, Ultrasonic & Load Sensors" },
         { layer: "Field App", tools: "React Native / Expo with Bluetooth Low Energy (BLE)" },
@@ -210,22 +214,22 @@ export const PROJECTS: Project[] = [
     name: "Classroom Attention Monitor",
     status: "BUILT",
     title: "Understanding classroom engagement through computer vision.",
-    description: "A multi-camera classroom monitoring system with zone-based analysis and a browser dashboard.",
+    description: "A multi-camera classroom monitoring pipeline using YOLOv8 and MediaPipe Face Mesh for zone-based aggregate student attentiveness without storing individual facial biometrics.",
     features: [
-      "Multi-camera RTSP stream processing",
+      "Multi-camera RTSP stream video processing",
       "Zone-based student seating engagement analysis",
       "Head pose estimation & gaze distribution",
       "Aggregated privacy-preserving browser dashboard",
       "Session timeline charts and lecture engagement metrics"
     ],
     technology: ["Python", "OpenCV", "MediaPipe", "YOLO"],
-    highlight: "Non-intrusive aggregate engagement metrics.",
+    highlight: "Privacy-first aggregate engagement heatmaps",
     category: "ai-iot",
     mockupType: "vision",
     fullArchitecture: {
       problem: "Lecturers and educational researchers have no objective data on whether instructional pacing keeps students attentive across different lecture hall zones.",
       solution: "Built a Python-based computer vision pipeline that computes aggregated head orientation without recording identifying personal facial features.",
-      metrics: ["Privacy-first aggregated metrics", "60 FPS real-time detection", "Zone heatmap visualization"],
+      metrics: ["Privacy-First Aggregated Metrics", "60 FPS Real-Time Detection", "Zone Heatmap Visualization"],
       stack: [
         { layer: "Vision Inference", tools: "YOLOv8 + MediaPipe Face Mesh" },
         { layer: "Stream Pipeline", tools: "Python, OpenCV RTSP multi-threaded consumer" },
@@ -237,8 +241,8 @@ export const PROJECTS: Project[] = [
     id: "daily-target",
     name: "Daily Target",
     status: "BUILT",
-    title: "Making everyday progress measurable.",
-    description: "A productivity and fitness tracking web application with secure data management.",
+    title: "Make every day count.",
+    description: "A focused productivity and habit-tracking web application engineered for friction-free streak execution, visual velocity, and encrypted session security.",
     features: [
       "Customizable daily streak habits & target goals",
       "Lightweight micro-journaling entries",
@@ -247,13 +251,13 @@ export const PROJECTS: Project[] = [
       "Keyboard shortcut driven quick updates"
     ],
     technology: ["Supabase", "Netlify"],
-    highlight: "Focused on daily execution without distraction.",
+    highlight: "Focused on daily execution without distraction",
     category: "web-mobile",
     mockupType: "dailytarget",
     fullArchitecture: {
       problem: "Commercial habit apps are bloated with ads, expensive subscriptions, and excessive notifications.",
       solution: "Crafted a clean, lightning-fast habit tracking interface focused entirely on friction-free daily updates and visual momentum.",
-      metrics: ["Sub-50ms load time", "Zero clutter interface", "Instant habit check-in"],
+      metrics: ["Sub-50ms Load Time", "Zero Clutter Interface", "Instant Habit Check-In"],
       stack: [
         { layer: "Frontend", tools: "React, Tailwind CSS, Netlify CDN" },
         { layer: "Database", tools: "Supabase Auth & Row-Level Security" }
@@ -264,8 +268,8 @@ export const PROJECTS: Project[] = [
     id: "painsense-ai",
     name: "PainSense AI",
     status: "PROTOTYPE",
-    title: "Visualizing pain indicators through an intelligent interface.",
-    description: "A React-based prototype featuring a clinical-style interface for pain indicator visualization.",
+    title: "Making pain indicators easier to visualize.",
+    description: "A clinical prototype featuring an interactive 2D anatomical body mapping interface and standardized VAS severity rating scales to streamline physician consultations.",
     features: [
       "Interactive 2D anatomical body mapping",
       "Severity rating scales (VAS/NRS clinical standards)",
@@ -274,13 +278,13 @@ export const PROJECTS: Project[] = [
       "High-contrast accessible clinical design system"
     ],
     technology: ["React"],
-    highlight: "Interactive clinical-grade UI experiment.",
+    highlight: "Clinical UI prototype (demonstration experiment)",
     category: "ai-iot",
     mockupType: "painsense",
     fullArchitecture: {
       problem: "Patients struggle to communicate radiating or intermittent pain accurately to physicians during brief clinical visits.",
       solution: "Engineered a digital anatomical locator where patients tap specific muscle/joint zones, indicate severity, and generate a standardized report.",
-      metrics: ["Standardized VAS scale", "Interactive SVG anatomical zones", "Clinician-ready PDF export"],
+      metrics: ["Standardized VAS Scale", "Interactive SVG Anatomical Zones", "Clinician-Ready PDF Export"],
       stack: [
         { layer: "UI Engine", tools: "React with interactive SVG coordinate mapping" },
         { layer: "State Management", tools: "Client-side Zustand state store" }
@@ -291,95 +295,96 @@ export const PROJECTS: Project[] = [
 
 export const CAPABILITIES: CapabilityItem[] = [
   {
-    title: "Role-Based Access",
-    description: "Different users see only the features and information relevant to them.",
+    title: "01 — Production-Grade Security",
+    description: "Row-Level Security (RLS) on PostgreSQL, encrypted session cookies, and strict role-based access control across faculty and admin tiers.",
     metric: "Granular RLS",
     tag: "Security"
   },
   {
-    title: "Scalable Data Handling",
-    description: "Applications designed to handle large datasets, including student lists exceeding 14,000 records.",
-    metric: "14,000+ Records",
-    tag: "Performance"
+    title: "02 — Structured Schemas",
+    description: "Normalized relational databases and deterministic foreign key constraints that eliminate data drift across multi-year institutional lifecycles.",
+    metric: "Zero Drift",
+    tag: "Architecture"
   },
   {
-    title: "Bulk Data Operations",
-    description: "Excel imports and exports for convenient onboarding and reporting.",
-    metric: "Instant XLSX Parser",
+    title: "03 — Spreadsheet Interoperability",
+    description: "High-throughput streaming XLSX/CSV import and export engines handling tens of thousands of student records in seconds.",
+    metric: "Instant Parser",
     tag: "Productivity"
   },
   {
-    title: "Automated Notifications",
-    description: "Email alerts for status changes, reminders and missing submissions.",
-    metric: "Zero Dropped Triggers",
+    title: "04 — Automated Notifications",
+    description: "Background email dispatchers and webhook listeners that trigger HoD reminders and peer review alerts without manual oversight.",
+    metric: "Zero Dropped",
     tag: "Automation"
   },
   {
-    title: "Payment Integration",
-    description: "Licensed payment partners are integrated for payment-related projects. We do not hold customer funds.",
-    metric: "PCI-Compliant Gateways",
-    tag: "Compliance"
+    title: "05 — Commerce & Invoicing",
+    description: "Licensed payment gateway integrations for event ticketing, receipts, and membership fees. Groveil does not hold customer funds.",
+    metric: "PCI-Compliant",
+    tag: "Integrations"
   },
   {
-    title: "Staged Delivery",
-    description: "Start with a working core and progressively add integrations and advanced features.",
-    metric: "Working Core First",
-    tag: "Methodology"
+    title: "06 — Modular Architecture",
+    description: "Decoupled frontend and serverless micro-endpoints ensuring fast load times, modular refactoring, and zero vendor lock-in.",
+    metric: "Clean Stacks",
+    tag: "Engineering"
   }
 ];
 
 export const PROCESS_STEPS: ProcessStep[] = [
   {
     number: "01",
-    name: "Discover",
-    description: "Understand the problem, users and requirements.",
-    deliverable: "Problem statement & User workflow audit"
+    name: "Problem Discovery & Workflow Audit",
+    description: "We shadow the actual coordinators, invigilators and administrators to audit manual pain points.",
+    deliverable: "Problem Specification & Scope"
   },
   {
     number: "02",
-    name: "Plan",
-    description: "Define scope, architecture and milestones.",
-    deliverable: "System architecture & Staged delivery roadmap"
+    name: "Data Architecture & Prototype",
+    description: "Define the relational schema, API contracts and produce a functional interactive UI mockup.",
+    deliverable: "Interactive Clickable Prototype"
   },
   {
     number: "03",
-    name: "Develop",
-    description: "Build a functional, reliable and user-friendly solution.",
-    deliverable: "Tested codebase & Core feature milestones"
+    name: "Core Build & Rapid Iteration",
+    description: "Sprint-based development focusing on high-frequency core workflows first, backed by live staging builds.",
+    deliverable: "Weekly Testable Deployments"
   },
   {
     number: "04",
-    name: "Deploy",
-    description: "Launch the application for real-world usage.",
-    deliverable: "Cloud hosting, on-prem setup & user onboarding"
+    name: "Pilot Deployment & Onboarding",
+    description: "In-person campus rollout with real user training, device calibration, and live concurrency testing.",
+    deliverable: "Pilot Launch"
   },
   {
     number: "05",
-    name: "Improve",
-    description: "Gather feedback and continuously enhance the product.",
-    deliverable: "Performance tuning & Feature expansions"
+    name: "Monitoring, Telemetry & Refinement",
+    description: "Active latency telemetry, edge logging, user feedback cycles, and continuous performance tuning.",
+    deliverable: "Monitoring & Active Maintenance Plan"
   }
 ];
 
 export const PROOF_POINTS = [
   {
     stat: "14,000+",
-    label: "Student Records Supported",
-    description: "Bulk attendance & data ingestion running without hitch."
+    label: "Student Records Processed",
+    description: "Bulk attendance & data ingestion across collegiate sessions without failure."
   },
   {
-    stat: "PSG CAS",
-    label: "Pilot Launch Partner",
-    description: "Centralized department activity tracking at PSG College of Arts & Science."
+    stat: "24",
+    label: "Departments in Pilot",
+    description: "Active centralized Innovation Cell tracking at PSG College of Arts & Science."
   },
   {
-    stat: "Multi-Platform",
-    label: "Android & Web Support",
-    description: "Native mobile hardware access with modern web portal synchronization."
+    stat: "7",
+    label: "Systems Designed",
+    description: "Web apps, mobile scanners, computer vision pipelines & embedded robotics."
   },
   {
-    stat: "100%",
-    label: "Live Tested Deployment",
-    description: "Built and deployed in actual institutional halls, replacing paper ledgers."
+    stat: "< 100ms",
+    label: "Reported Scan Response",
+    description: "Sub-100ms camera barcode decoding on field smartphones."
   }
 ];
+

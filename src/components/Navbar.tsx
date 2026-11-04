@@ -9,22 +9,39 @@ interface NavbarProps {
 export const Navbar: React.FC<NavbarProps> = ({ onStartProject }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
+
+      const sections = ['home', 'about', 'services', 'projects', 'process', 'contact'];
+      const scrollPosition = window.scrollY + 140;
+
+      for (const sectionId of sections) {
+        const el = document.getElementById(sectionId);
+        if (el) {
+          const top = el.offsetTop;
+          const height = el.offsetHeight;
+          if (scrollPosition >= top && scrollPosition < top + height) {
+            setActiveSection(sectionId);
+            break;
+          }
+        }
+      }
     };
-    window.addEventListener('scroll', handleScroll);
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const navLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Services', href: '#services' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'How We Work', href: '#process' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Home', href: '#home', id: 'home' },
+    { name: 'About', href: '#about', id: 'about' },
+    { name: 'Services', href: '#services', id: 'services' },
+    { name: 'Projects', href: '#projects', id: 'projects' },
+    { name: 'How We Work', href: '#process', id: 'process' },
+    { name: 'Contact', href: '#contact', id: 'contact' },
   ];
 
   const handleScrollTo = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -56,48 +73,62 @@ export const Navbar: React.FC<NavbarProps> = ({ onStartProject }) => {
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full transition-all duration-200 border-b ${
+      className={`sticky top-0 z-50 w-full transition-all duration-300 border-b ${
         isScrolled
-          ? 'glass-nav border-[#EAEAEA] shadow-subtle'
-          : 'bg-white/95 backdrop-blur-md border-[#EAEAEA]'
+          ? 'bg-[#0A0A0A]/90 backdrop-blur-md border-[#262626] shadow-2xl'
+          : 'bg-[#0A0A0A]/80 backdrop-blur-md border-[#262626]/80'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20">
           
-          {/* Left: Official Company Logo */}
-          <a
-            href="#home"
-            onClick={(e) => handleScrollTo(e, '#home')}
-            className="group flex items-center gap-3 transition-opacity hover:opacity-90"
-            aria-label="Groveil Home"
-          >
-            <Logo size="md" />
-            <div className="hidden sm:inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-brand-50 border border-brand-100 text-[11px] font-medium text-brand-700">
-              <span className="w-1.5 h-1.5 rounded-full bg-brand-600 animate-pulse"></span>
-              Coimbatore
-            </div>
-          </a>
+          {/* Left: Official Company Logo & Location indicator */}
+          <div className="flex items-center gap-4">
+            <a
+              href="#home"
+              onClick={(e) => handleScrollTo(e, '#home')}
+              className="group flex items-center gap-3 transition-opacity hover:opacity-90"
+              aria-label="GROVEIL Home"
+            >
+              <Logo size="md" />
+            </a>
 
-          {/* Center/Right: Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-1 lg:space-x-2" aria-label="Main Navigation">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                onClick={(e) => handleScrollTo(e, link.href)}
-                className="px-3.5 py-2 text-[14px] font-medium text-[#404040] hover:text-[#171717] rounded-md transition-colors hover:bg-[#F7F8FA]"
-              >
-                {link.name}
-              </a>
-            ))}
+            {/* Subtle Coimbatore Pulse Tag */}
+            <div className="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#141414] border border-[#262626] text-[11px] font-mono text-[#D4D4D4]">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-500 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-500"></span>
+              </span>
+              <span className="font-medium">Coimbatore, IN</span>
+            </div>
+          </div>
+
+          {/* Center: Desktop Navigation with active pill tracking */}
+          <nav className="hidden md:flex items-center space-x-1 lg:space-x-1.5" aria-label="Main Navigation">
+            {navLinks.map((link) => {
+              const isActive = activeSection === link.id;
+              return (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  onClick={(e) => handleScrollTo(e, link.href)}
+                  className={`px-3.5 py-1.5 text-xs font-medium rounded-lg transition-all ${
+                    isActive
+                      ? 'text-[#FF5500] bg-[#1E110A] font-semibold border border-[#FF5500]/30 shadow-xs'
+                      : 'text-[#A3A3A3] hover:text-white hover:bg-[#161616]'
+                  }`}
+                >
+                  {link.name}
+                </a>
+              );
+            })}
           </nav>
 
           {/* Right: CTA Button */}
           <div className="hidden md:flex items-center space-x-3">
             <button
               onClick={handleCtaClick}
-              className="group relative inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-brand-700 hover:bg-brand-800 rounded-lg transition-all duration-150 shadow-sm active:scale-[0.98] border border-brand-800"
+              className="group relative inline-flex items-center justify-center px-4 py-2 text-xs font-bold text-black bg-[#FF5500] hover:bg-[#FF6B1A] rounded-lg transition-all duration-150 shadow-sm hover:shadow active:scale-[0.98]"
             >
               <span>Start a Project</span>
               <ArrowRight className="w-3.5 h-3.5 ml-1.5 transition-transform group-hover:translate-x-0.5" />
@@ -108,13 +139,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onStartProject }) => {
           <div className="flex md:hidden items-center space-x-2">
             <button
               onClick={handleCtaClick}
-              className="px-3 py-1.5 text-xs font-medium text-white bg-brand-700 rounded-md border border-brand-800"
+              className="px-3 py-1.5 text-xs font-bold text-black bg-[#FF5500] rounded-lg"
             >
               Start
             </button>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 text-[#404040] hover:text-[#171717] hover:bg-surface-secondary rounded-lg transition-colors"
+              className="p-2 text-[#A3A3A3] hover:text-white hover:bg-[#161616] rounded-lg transition-colors"
               aria-label="Toggle navigation menu"
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -125,29 +156,36 @@ export const Navbar: React.FC<NavbarProps> = ({ onStartProject }) => {
 
       {/* Mobile Menu Dropdown */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-t border-[#EAEAEA] bg-white px-4 pt-3 pb-6 space-y-2 shadow-lg animate-in fade-in duration-200">
+        <div className="md:hidden border-t border-[#262626] bg-[#0E0E0E] px-4 pt-3 pb-6 space-y-3 shadow-2xl animate-in fade-in duration-200">
           <div className="space-y-1">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                onClick={(e) => handleScrollTo(e, link.href)}
-                className="block px-3 py-2.5 text-base font-medium text-[#333333] hover:text-[#171717] hover:bg-surface-secondary rounded-lg transition-colors"
-              >
-                {link.name}
-              </a>
-            ))}
+            {navLinks.map((link) => {
+              const isActive = activeSection === link.id;
+              return (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  onClick={(e) => handleScrollTo(e, link.href)}
+                  className={`block px-3 py-2 text-sm rounded-lg transition-colors ${
+                    isActive
+                      ? 'font-semibold text-[#FF5500] bg-[#1E110A] border border-[#FF5500]/30'
+                      : 'text-[#A3A3A3] hover:text-white hover:bg-[#161616] font-medium'
+                  }`}
+                >
+                  {link.name}
+                </a>
+              );
+            })}
           </div>
 
-          <div className="pt-4 border-t border-[#EAEAEA] flex flex-col gap-2">
+          <div className="pt-3 border-t border-[#262626] flex flex-col gap-2">
             <button
               onClick={handleCtaClick}
-              className="w-full flex items-center justify-center px-4 py-3 text-sm font-medium text-white bg-brand-700 hover:bg-brand-800 rounded-lg transition-colors"
+              className="w-full flex items-center justify-center px-4 py-2.5 text-xs font-bold text-black bg-[#FF5500] hover:bg-[#FF6B1A] rounded-lg transition-colors"
             >
               <span>Start a Project</span>
-              <ArrowRight className="w-4 h-4 ml-2" />
+              <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
             </button>
-            <div className="text-center text-xs text-surface-textMuted py-1 font-mono">
+            <div className="text-center text-[11px] text-[#737373] py-1 font-mono">
               Coimbatore · Tamil Nadu · India
             </div>
           </div>

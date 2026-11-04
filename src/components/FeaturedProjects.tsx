@@ -52,41 +52,41 @@ export const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({
     switch (status) {
       case 'CONCEPT':
         return (
-          <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse"></span>
+          <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold bg-[#1E110A] text-brand-500 border border-brand-500/40">
+            <span className="w-1.5 h-1.5 rounded-full bg-brand-500 animate-pulse"></span>
             CONCEPT · PHASE 1
           </span>
         );
       case 'LIVE':
         return (
-          <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse"></span>
+          <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold bg-[#102014] text-[#22C55E] border border-[#22C55E]/40">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#22C55E] animate-pulse"></span>
             LIVE DEPLOYMENT
           </span>
         );
       case 'PILOT LAUNCH':
         return (
-          <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold bg-amber-50 text-amber-700 border border-amber-200">
-            <span className="w-1.5 h-1.5 rounded-full bg-amber-600 animate-pulse"></span>
+          <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold bg-[#241B08] text-[#FACC15] border border-[#FACC15]/40">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#FACC15] animate-pulse"></span>
             PILOT LAUNCH
           </span>
         );
       case 'IN DEVELOPMENT':
         return (
-          <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold bg-blue-50 text-blue-700 border border-blue-200">
-            <span className="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
+          <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold bg-[#0C1929] text-[#38BDF8] border border-[#38BDF8]/40">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#38BDF8]"></span>
             IN ACTIVE DEVELOPMENT
           </span>
         );
       case 'BUILT':
         return (
-          <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold bg-surface-secondary text-[#333] border border-[#EAEAEA]">
+          <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold bg-[#181818] text-[#D4D4D4] border border-[#262626]">
             BUILT & OPERATIONAL
           </span>
         );
       case 'PROTOTYPE':
         return (
-          <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold bg-purple-50 text-purple-700 border border-purple-200">
+          <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold bg-[#1F102A] text-[#C084FC] border border-[#C084FC]/40">
             CLINICAL PROTOTYPE
           </span>
         );
@@ -94,19 +94,20 @@ export const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({
   };
 
   return (
-    <section id="projects" className="py-20 md:py-32 bg-white border-b border-[#EAEAEA]">
+    <section id="projects" className="py-20 md:py-32 bg-[#0A0A0A] border-b border-[#262626]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="max-w-3xl">
-          <div className="text-xs font-mono font-bold tracking-widest text-brand-700 uppercase mb-3">
-            03 // OUR WORK
+          <div className="text-xs font-mono font-bold tracking-widest text-brand-500 uppercase mb-3 flex items-center gap-2">
+            <span className="w-1.5 h-1.5 rounded-full bg-brand-500 animate-pulse"></span>
+            <span>03 // OUR WORK</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#171717] font-display leading-tight">
-            Products built to solve actual problems.
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white font-display leading-tight">
+            Technology that moves beyond the screen.
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-surface-textMuted max-w-2xl">
-            Every project starts with a real-world problem. Here are some of the systems we've designed and developed.
+          <p className="mt-4 text-base sm:text-lg text-[#A3A3A3] max-w-2xl leading-relaxed">
+            Every project starts with a real-world bottleneck. From edge-sensing rovers and high-throughput campus infrastructure to clinical research prototypes, here is what we’ve engineered.
           </p>
         </div>
 
@@ -114,40 +115,40 @@ export const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({
         <div className="flex flex-wrap items-center gap-2 mt-8 pb-4">
           <button
             onClick={() => setActiveFilter('all')}
-            className={`px-3.5 py-1.5 text-xs font-medium rounded-lg transition-all ${
+            className={`px-3.5 py-1.5 text-xs font-mono font-medium rounded-lg transition-all ${
               activeFilter === 'all'
-                ? 'bg-brand-700 text-white shadow-xs'
-                : 'bg-surface-secondary text-surface-textMuted hover:text-[#171717] hover:bg-[#EAEAEA]'
+                ? 'bg-brand-500 text-black font-bold shadow-xs'
+                : 'bg-[#141414] text-[#A3A3A3] hover:text-white hover:bg-[#1A1A1A] border border-[#262626]'
             }`}
           >
             All Products ({PROJECTS.length})
           </button>
           <button
             onClick={() => setActiveFilter('live')}
-            className={`px-3.5 py-1.5 text-xs font-medium rounded-lg transition-all ${
+            className={`px-3.5 py-1.5 text-xs font-mono font-medium rounded-lg transition-all ${
               activeFilter === 'live'
-                ? 'bg-brand-700 text-white shadow-xs'
-                : 'bg-surface-secondary text-surface-textMuted hover:text-[#171717] hover:bg-[#EAEAEA]'
+                ? 'bg-brand-500 text-black font-bold shadow-xs'
+                : 'bg-[#141414] text-[#A3A3A3] hover:text-white hover:bg-[#1A1A1A] border border-[#262626]'
             }`}
           >
             Live Deployments & Pilots ({PROJECTS.filter(p => p.category === 'live').length})
           </button>
           <button
             onClick={() => setActiveFilter('web-mobile')}
-            className={`px-3.5 py-1.5 text-xs font-medium rounded-lg transition-all ${
+            className={`px-3.5 py-1.5 text-xs font-mono font-medium rounded-lg transition-all ${
               activeFilter === 'web-mobile'
-                ? 'bg-brand-700 text-white shadow-xs'
-                : 'bg-surface-secondary text-surface-textMuted hover:text-[#171717] hover:bg-[#EAEAEA]'
+                ? 'bg-brand-500 text-black font-bold shadow-xs'
+                : 'bg-[#141414] text-[#A3A3A3] hover:text-white hover:bg-[#1A1A1A] border border-[#262626]'
             }`}
           >
             Web & Mobile ({PROJECTS.filter(p => p.category === 'web-mobile').length})
           </button>
           <button
             onClick={() => setActiveFilter('ai-iot')}
-            className={`px-3.5 py-1.5 text-xs font-medium rounded-lg transition-all ${
+            className={`px-3.5 py-1.5 text-xs font-mono font-medium rounded-lg transition-all ${
               activeFilter === 'ai-iot'
-                ? 'bg-brand-700 text-white shadow-xs'
-                : 'bg-surface-secondary text-surface-textMuted hover:text-[#171717] hover:bg-[#EAEAEA]'
+                ? 'bg-brand-500 text-black font-bold shadow-xs'
+                : 'bg-[#141414] text-[#A3A3A3] hover:text-white hover:bg-[#1A1A1A] border border-[#262626]'
             }`}
           >
             Hardware & Vision AI ({PROJECTS.filter(p => p.category === 'ai-iot').length})
@@ -162,7 +163,7 @@ export const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({
             return (
               <div
                 key={project.id}
-                className="p-6 sm:p-8 lg:p-10 rounded-2xl border border-[#EAEAEA] bg-surface-secondary/40 hover:bg-surface-secondary/70 transition-colors"
+                className="p-6 sm:p-8 lg:p-10 rounded-2xl border border-[#262626] bg-[#121212] hover:border-brand-500/40 transition-colors"
               >
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
                   
@@ -173,7 +174,7 @@ export const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({
                     <div className="flex flex-wrap items-center gap-2">
                       {getStatusBadge(project.status)}
                       {project.highlight && (
-                        <span className="text-xs font-mono font-medium text-brand-700 px-2 py-0.5 rounded bg-brand-50 border border-brand-100">
+                        <span className="text-xs font-mono font-medium text-[#FACC15] px-2.5 py-0.5 rounded-full bg-[#241B08] border border-[#FACC15]/40">
                           {project.highlight}
                         </span>
                       )}
@@ -181,28 +182,28 @@ export const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({
 
                     {/* Project Title & Headline */}
                     <div>
-                      <div className="text-xs font-mono text-brand-700 font-semibold uppercase tracking-wider mb-1">
+                      <div className="text-xs font-mono text-brand-500 font-bold uppercase tracking-wider mb-1">
                         {project.name.toUpperCase()}
                       </div>
-                      <h3 className="text-2xl sm:text-3xl font-bold text-[#171717] font-display">
+                      <h3 className="text-2xl sm:text-3xl font-bold text-white font-display">
                         {project.title}
                       </h3>
                     </div>
 
                     {/* Narrative Description */}
-                    <p className="text-sm sm:text-base text-[#404040] leading-relaxed">
+                    <p className="text-sm sm:text-base text-[#D4D4D4] leading-relaxed">
                       {project.description}
                     </p>
 
                     {/* Features List */}
-                    <div className="pt-2 border-t border-[#EAEAEA] space-y-2">
-                      <div className="text-[11px] font-mono text-surface-textMuted uppercase tracking-wider">
+                    <div className="pt-2 border-t border-[#262626] space-y-2">
+                      <div className="text-[11px] font-mono text-[#737373] uppercase tracking-wider">
                         Key Features & Capabilities
                       </div>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
                         {project.features.slice(0, 6).map((feature, fIdx) => (
-                          <div key={fIdx} className="flex items-start gap-1.5 text-[#333333]">
-                            <CheckCircle2 className="w-3.5 h-3.5 text-brand-600 mt-0.5 flex-shrink-0" />
+                          <div key={fIdx} className="flex items-start gap-1.5 text-[#D4D4D4]">
+                            <CheckCircle2 className="w-3.5 h-3.5 text-brand-500 mt-0.5 flex-shrink-0" />
                             <span>{feature}</span>
                           </div>
                         ))}
@@ -210,13 +211,13 @@ export const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({
                     </div>
 
                     {/* Technology Tags & Actions */}
-                    <div className="pt-3 border-t border-[#EAEAEA] flex flex-wrap items-center justify-between gap-4">
+                    <div className="pt-3 border-t border-[#262626] flex flex-wrap items-center justify-between gap-4">
                       <div className="flex flex-wrap items-center gap-1.5">
-                        <span className="text-xs font-mono text-surface-textMuted mr-1">Stack:</span>
+                        <span className="text-xs font-mono text-[#737373] mr-1">Stack:</span>
                         {project.technology.map((tech, tIdx) => (
                           <span
                             key={tIdx}
-                            className="px-2.5 py-1 rounded-md bg-white border border-[#EAEAEA] text-[11px] font-mono font-medium text-[#171717]"
+                            className="px-2.5 py-1 rounded-md bg-[#181818] border border-[#262626] text-[11px] font-mono font-medium text-white"
                           >
                             {tech}
                           </span>
@@ -226,9 +227,9 @@ export const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({
                       <div className="flex items-center gap-2">
                         <button
                           onClick={() => onSelectProject(project)}
-                          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white hover:bg-surface-secondary border border-[#EAEAEA] text-xs font-medium text-[#171717] transition-colors"
+                          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#181818] hover:bg-[#202020] border border-[#262626] text-xs font-medium text-white transition-colors"
                         >
-                          <Eye className="w-3.5 h-3.5 text-surface-textMuted" />
+                          <Eye className="w-3.5 h-3.5 text-[#A3A3A3]" />
                           <span>Inspect Architecture</span>
                         </button>
 
@@ -240,10 +241,10 @@ export const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({
                               onContactWithProject(project.name);
                             }
                           }}
-                          className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-brand-700 hover:bg-brand-800 text-xs font-medium text-white transition-colors"
+                          className="inline-flex items-center gap-1 px-3.5 py-1.5 rounded-lg bg-brand-500 hover:bg-[#FF6B1A] text-xs font-bold text-black transition-colors"
                         >
                           <span>{project.id === 'groveil' ? 'View Groveil' : 'Build Similar'}</span>
-                          <ArrowRight className="w-3 h-3" />
+                          <ArrowRight className="w-3.5 h-3.5 ml-0.5" />
                         </button>
                       </div>
                     </div>

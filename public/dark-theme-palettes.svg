@@ -1,0 +1,349 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 1850" width="100%" height="100%" style="background-color: #050709; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <defs>
+    <!-- Soft Drop Shadows -->
+    <filter id="dark-card-shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="12" stdDeviation="24" flood-color="#000000" flood-opacity="0.8"/>
+    </filter>
+
+    <!-- Emerald Glow -->
+    <filter id="emerald-glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="0" stdDeviation="12" flood-color="#10B981" flood-opacity="0.5"/>
+    </filter>
+
+    <!-- Indigo Glow -->
+    <filter id="indigo-glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="0" stdDeviation="12" flood-color="#6366F1" flood-opacity="0.5"/>
+    </filter>
+
+    <!-- Orange Glow -->
+    <filter id="orange-glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="0" stdDeviation="12" flood-color="#FF5500" flood-opacity="0.5"/>
+    </filter>
+
+    <!-- Gold Glow -->
+    <filter id="gold-glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="0" stdDeviation="12" flood-color="#DFAB50" flood-opacity="0.5"/>
+    </filter>
+
+    <!-- Subtle Ambient Gradients -->
+    <radialGradient id="bg-glow" cx="50%" cy="10%" r="50%">
+      <stop offset="0%" stop-color="#1E293B" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#050709" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Deep Canvas Background -->
+  <rect width="1440" height="1850" fill="#06080B"/>
+  <rect width="1440" height="1850" fill="url(#bg-glow)"/>
+
+  <!-- Top Title Bar -->
+  <g transform="translate(80, 60)">
+    <rect x="0" y="0" width="200" height="28" rx="14" fill="#0F172A" stroke="#1E293B" stroke-width="1"/>
+    <circle cx="16" cy="14" r="4.5" fill="#10B981" filter="url(#emerald-glow)"/>
+    <text x="30" y="18" fill="#E2E8F0" font-size="11" font-family="monospace" font-weight="700" letter-spacing="1.5">DARK MODE EDITIONS</text>
+    
+    <text x="0" y="72" fill="#FFFFFF" font-size="36" font-weight="800" letter-spacing="-0.8">GROVEIL — Dark Theme Palettes</text>
+    <text x="0" y="104" fill="#94A3B8" font-size="15" font-weight="400">Engineered for low light, glowing hardware telemetry, and sleek developer aesthetics.</text>
+  </g>
+
+  <!-- ================= PALETTE 1: CYBER EMERALD ================= -->
+  <g transform="translate(80, 210)" filter="url(#dark-card-shadow)">
+    <!-- Main Card Body -->
+    <rect width="1280" height="340" rx="22" fill="#080D0A" stroke="#182A1F" stroke-width="1.5"/>
+    <rect x="0" y="0" width="1280" height="4" rx="2" fill="#10B981"/>
+
+    <!-- Left Content Column -->
+    <g transform="translate(44, 40)">
+      <rect x="0" y="0" width="180" height="24" rx="6" fill="#10B981" fill-opacity="0.12" stroke="#10B981" stroke-width="0.8"/>
+      <text x="12" y="16" fill="#10B981" font-size="10" font-family="monospace" font-weight="700" letter-spacing="1">OPTION 01 // LINEAR TECH</text>
+      
+      <text x="0" y="62" fill="#FFFFFF" font-size="26" font-weight="800">Obsidian &amp; Cyber Emerald</text>
+      <text x="0" y="90" fill="#789082" font-size="13" font-weight="400">Deep obsidian background with radioactive emerald accents and gold micro-chips.</text>
+
+      <!-- Color Swatches Row -->
+      <g transform="translate(0, 124)">
+        <!-- Swatch 1: Emerald Primary -->
+        <g transform="translate(0, 0)">
+          <rect width="90" height="56" rx="10" fill="#10B981" filter="url(#emerald-glow)"/>
+          <text x="0" y="74" fill="#FFFFFF" font-size="11" font-weight="600">Cyber Emerald</text>
+          <text x="0" y="88" fill="#10B981" font-size="10" font-family="monospace">#10B981</text>
+          <text x="0" y="102" fill="#64748B" font-size="8" font-family="monospace">PRIMARY</text>
+        </g>
+        <!-- Swatch 2: Neon Mint -->
+        <g transform="translate(106, 0)">
+          <rect width="90" height="56" rx="10" fill="#34D399"/>
+          <text x="0" y="74" fill="#FFFFFF" font-size="11" font-weight="600">Neon Mint</text>
+          <text x="0" y="88" fill="#34D399" font-size="10" font-family="monospace">#34D399</text>
+          <text x="0" y="102" fill="#64748B" font-size="8" font-family="monospace">ACCENT</text>
+        </g>
+        <!-- Swatch 3: Deep Canvas -->
+        <g transform="translate(212, 0)">
+          <rect width="90" height="56" rx="10" fill="#080D0A" stroke="#223B2B" stroke-width="1.5"/>
+          <text x="0" y="74" fill="#FFFFFF" font-size="11" font-weight="600">Obsidian Void</text>
+          <text x="0" y="88" fill="#94A3B8" font-size="10" font-family="monospace">#080D0A</text>
+          <text x="0" y="102" fill="#64748B" font-size="8" font-family="monospace">CANVAS</text>
+        </g>
+        <!-- Swatch 4: Card Surface -->
+        <g transform="translate(318, 0)">
+          <rect width="90" height="56" rx="10" fill="#121A15" stroke="#223B2B" stroke-width="1.5"/>
+          <text x="0" y="74" fill="#FFFFFF" font-size="11" font-weight="600">Dark Surface</text>
+          <text x="0" y="88" fill="#94A3B8" font-size="10" font-family="monospace">#121A15</text>
+          <text x="0" y="102" fill="#64748B" font-size="8" font-family="monospace">SURFACE</text>
+        </g>
+        <!-- Swatch 5: Micro Gold -->
+        <g transform="translate(424, 0)">
+          <rect width="90" height="56" rx="10" fill="#DFAB50"/>
+          <text x="0" y="74" fill="#FFFFFF" font-size="11" font-weight="600">Solar Amber</text>
+          <text x="0" y="88" fill="#DFAB50" font-size="10" font-family="monospace">#DFAB50</text>
+          <text x="0" y="102" fill="#64748B" font-size="8" font-family="monospace">TELEMETRY</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- Right Live UI Preview -->
+    <g transform="translate(680, 36)">
+      <rect width="556" height="268" rx="16" fill="#101813" stroke="#1F3628" stroke-width="1.5"/>
+      <!-- Top Chrome Bar -->
+      <rect x="0" y="0" width="556" height="38" rx="16" fill="#14211A"/>
+      <circle cx="22" cy="19" r="4.5" fill="#EF4444"/>
+      <circle cx="38" cy="19" r="4.5" fill="#DFAB50"/>
+      <circle cx="54" cy="19" r="4.5" fill="#10B981"/>
+      <text x="80" y="23" fill="#789082" font-size="11" font-family="monospace">groveil-rover // 4g-lte.live</text>
+      <rect x="424" y="9" width="112" height="20" rx="10" fill="#10B981" fill-opacity="0.15" stroke="#10B981" stroke-width="0.8"/>
+      <text x="480" y="23" fill="#10B981" font-size="10" font-family="monospace" font-weight="700" text-anchor="middle">● CONNECTED</text>
+
+      <!-- Content Area -->
+      <text x="28" y="72" fill="#DFAB50" font-size="11" font-family="monospace" font-weight="700" letter-spacing="1">THE INVISIBLE SHIELD ALL OVER THE FIELD</text>
+      <text x="28" y="108" fill="#FFFFFF" font-size="24" font-weight="800">Built for the Real World.</text>
+      <text x="28" y="134" fill="#789082" font-size="13">Acoustic borer sensing (0.8–3.2 kHz) · MLX90640 Canopy Climb</text>
+
+      <!-- Interactive Buttons -->
+      <rect x="28" y="162" width="150" height="42" rx="10" fill="#10B981" filter="url(#emerald-glow)"/>
+      <text x="103" y="188" fill="#080D0A" font-size="13" font-weight="800" text-anchor="middle">Explore Work →</text>
+
+      <rect x="190" y="162" width="124" height="42" rx="10" fill="#14211A" stroke="#254232" stroke-width="1.2"/>
+      <text x="252" y="188" fill="#FFFFFF" font-size="13" font-weight="600" text-anchor="middle">Let's Talk</text>
+
+      <!-- Telemetry Data Pill -->
+      <rect x="330" y="162" width="198" height="42" rx="10" fill="#080D0A" stroke="#254232" stroke-width="1.2"/>
+      <text x="346" y="180" fill="#DFAB50" font-size="11" font-family="monospace" font-weight="700">PALM #042 · ROW 07</text>
+      <text x="346" y="195" fill="#10B981" font-size="10" font-family="monospace">HEALTH OPTIMAL (98%)</text>
+    </g>
+  </g>
+
+  <!-- ================= PALETTE 2: MIDNIGHT INDIGO ================= -->
+  <g transform="translate(80, 580)" filter="url(#dark-card-shadow)">
+    <rect width="1280" height="340" rx="22" fill="#040711" stroke="#151F38" stroke-width="1.5"/>
+    <rect x="0" y="0" width="1280" height="4" rx="2" fill="#6366F1"/>
+
+    <g transform="translate(44, 40)">
+      <rect x="0" y="0" width="180" height="24" rx="6" fill="#6366F1" fill-opacity="0.15" stroke="#6366F1" stroke-width="0.8"/>
+      <text x="12" y="16" fill="#818CF8" font-size="10" font-family="monospace" font-weight="700" letter-spacing="1">OPTION 02 // VERCEL DARK</text>
+      
+      <text x="0" y="62" fill="#FFFFFF" font-size="26" font-weight="800">Midnight Titanium &amp; Cyber Indigo</text>
+      <text x="0" y="90" fill="#8294B0" font-size="13" font-weight="400">Pure void black with high-voltage neon indigo and cyan lasers. Ultra-modern developer look.</text>
+
+      <g transform="translate(0, 124)">
+        <g transform="translate(0, 0)">
+          <rect width="90" height="56" rx="10" fill="#6366F1" filter="url(#indigo-glow)"/>
+          <text x="0" y="74" fill="#FFFFFF" font-size="11" font-weight="600">Electric Indigo</text>
+          <text x="0" y="88" fill="#818CF8" font-size="10" font-family="monospace">#6366F1</text>
+          <text x="0" y="102" fill="#64748B" font-size="8" font-family="monospace">PRIMARY</text>
+        </g>
+        <g transform="translate(106, 0)">
+          <rect width="90" height="56" rx="10" fill="#38BDF8"/>
+          <text x="0" y="74" fill="#FFFFFF" font-size="11" font-weight="600">Cyber Cyan</text>
+          <text x="0" y="88" fill="#38BDF8" font-size="10" font-family="monospace">#38BDF8</text>
+          <text x="0" y="102" fill="#64748B" font-size="8" font-family="monospace">ACCENT</text>
+        </g>
+        <g transform="translate(212, 0)">
+          <rect width="90" height="56" rx="10" fill="#030712" stroke="#1F2937" stroke-width="1.5"/>
+          <text x="0" y="74" fill="#FFFFFF" font-size="11" font-weight="600">Void Black</text>
+          <text x="0" y="88" fill="#94A3B8" font-size="10" font-family="monospace">#030712</text>
+          <text x="0" y="102" fill="#64748B" font-size="8" font-family="monospace">CANVAS</text>
+        </g>
+        <g transform="translate(318, 0)">
+          <rect width="90" height="56" rx="10" fill="#0B132B" stroke="#1F2937" stroke-width="1.5"/>
+          <text x="0" y="74" fill="#FFFFFF" font-size="11" font-weight="600">Titanium Slate</text>
+          <text x="0" y="88" fill="#94A3B8" font-size="10" font-family="monospace">#0B132B</text>
+          <text x="0" y="102" fill="#64748B" font-size="8" font-family="monospace">SURFACE</text>
+        </g>
+        <g transform="translate(424, 0)">
+          <rect width="90" height="56" rx="10" fill="#A855F7"/>
+          <text x="0" y="74" fill="#FFFFFF" font-size="11" font-weight="600">Laser Violet</text>
+          <text x="0" y="88" fill="#A855F7" font-size="10" font-family="monospace">#A855F7</text>
+          <text x="0" y="102" fill="#64748B" font-size="8" font-family="monospace">DETAIL</text>
+        </g>
+      </g>
+    </g>
+
+    <g transform="translate(680, 36)">
+      <rect width="556" height="268" rx="16" fill="#0A0F1D" stroke="#1C284A" stroke-width="1.5"/>
+      <rect x="0" y="0" width="556" height="38" rx="16" fill="#101830"/>
+      <circle cx="22" cy="19" r="4.5" fill="#EF4444"/>
+      <circle cx="38" cy="19" r="4.5" fill="#F59E0B"/>
+      <circle cx="54" cy="19" r="4.5" fill="#10B981"/>
+      <text x="80" y="23" fill="#8294B0" font-size="11" font-family="monospace">attendhub.cloud // fast-scan.io</text>
+      <rect x="424" y="9" width="112" height="20" rx="10" fill="#6366F1" fill-opacity="0.2" stroke="#818CF8" stroke-width="0.8"/>
+      <text x="480" y="23" fill="#818CF8" font-size="10" font-family="monospace" font-weight="700" text-anchor="middle">&lt; 100MS SYNC</text>
+
+      <text x="28" y="72" fill="#38BDF8" font-size="11" font-family="monospace" font-weight="700" letter-spacing="1">CAMPUS INFRASTRUCTURE PLATFORM</text>
+      <text x="28" y="108" fill="#FFFFFF" font-size="24" font-weight="800">Built for the Real World.</text>
+      <text x="28" y="134" fill="#8294B0" font-size="13">14,240 students scanned · 100 FPS barcode pipeline</text>
+
+      <rect x="28" y="162" width="150" height="42" rx="10" fill="#6366F1" filter="url(#indigo-glow)"/>
+      <text x="103" y="188" fill="#FFFFFF" font-size="13" font-weight="800" text-anchor="middle">Start a Project →</text>
+
+      <rect x="190" y="162" width="124" height="42" rx="10" fill="#101830" stroke="#253560" stroke-width="1.2"/>
+      <text x="252" y="188" fill="#FFFFFF" font-size="13" font-weight="600" text-anchor="middle">Inspect Stack</text>
+
+      <rect x="330" y="162" width="198" height="42" rx="10" fill="#040711" stroke="#253560" stroke-width="1.2"/>
+      <text x="346" y="180" fill="#38BDF8" font-size="11" font-family="monospace" font-weight="700">SUB-100MS LATENCY</text>
+      <text x="346" y="195" fill="#818CF8" font-size="10" font-family="monospace">SUPABASE POSTGRESQL</text>
+    </g>
+  </g>
+
+  <!-- ================= PALETTE 3: STEALTH ORANGE ================= -->
+  <g transform="translate(80, 950)" filter="url(#dark-card-shadow)">
+    <rect width="1280" height="340" rx="22" fill="#0A0A0A" stroke="#242424" stroke-width="1.5"/>
+    <rect x="0" y="0" width="1280" height="4" rx="2" fill="#FF5500"/>
+
+    <g transform="translate(44, 40)">
+      <rect x="0" y="0" width="200" height="24" rx="6" fill="#FF5500" fill-opacity="0.15" stroke="#FF5500" stroke-width="0.8"/>
+      <text x="12" y="16" fill="#FF7733" font-size="10" font-family="monospace" font-weight="700" letter-spacing="1">OPTION 03 // TEENAGE ENG</text>
+      
+      <text x="0" y="62" fill="#FFFFFF" font-size="26" font-weight="800">Stealth Carbon &amp; Safety Orange</text>
+      <text x="0" y="90" fill="#999999" font-size="13" font-weight="400">Pure industrial hardware darkness. High-contrast hazard accents and brutalist utilitarian typography.</text>
+
+      <g transform="translate(0, 124)">
+        <g transform="translate(0, 0)">
+          <rect width="90" height="56" rx="10" fill="#FF5500" filter="url(#orange-glow)"/>
+          <text x="0" y="74" fill="#FFFFFF" font-size="11" font-weight="600">Flame Orange</text>
+          <text x="0" y="88" fill="#FF7733" font-size="10" font-family="monospace">#FF5500</text>
+          <text x="0" y="102" fill="#64748B" font-size="8" font-family="monospace">PRIMARY</text>
+        </g>
+        <g transform="translate(106, 0)">
+          <rect width="90" height="56" rx="10" fill="#FACC15"/>
+          <text x="0" y="74" fill="#FFFFFF" font-size="11" font-weight="600">Hazard Gold</text>
+          <text x="0" y="88" fill="#FACC15" font-size="10" font-family="monospace">#FACC15</text>
+          <text x="0" y="102" fill="#64748B" font-size="8" font-family="monospace">ACCENT</text>
+        </g>
+        <g transform="translate(212, 0)">
+          <rect width="90" height="56" rx="10" fill="#000000" stroke="#333333" stroke-width="1.5"/>
+          <text x="0" y="74" fill="#FFFFFF" font-size="11" font-weight="600">Pitch Carbon</text>
+          <text x="0" y="88" fill="#94A3B8" font-size="10" font-family="monospace">#000000</text>
+          <text x="0" y="102" fill="#64748B" font-size="8" font-family="monospace">CANVAS</text>
+        </g>
+        <g transform="translate(318, 0)">
+          <rect width="90" height="56" rx="10" fill="#171717" stroke="#333333" stroke-width="1.5"/>
+          <text x="0" y="74" fill="#FFFFFF" font-size="11" font-weight="600">Matte Shell</text>
+          <text x="0" y="88" fill="#94A3B8" font-size="10" font-family="monospace">#171717</text>
+          <text x="0" y="102" fill="#64748B" font-size="8" font-family="monospace">SURFACE</text>
+        </g>
+        <g transform="translate(424, 0)">
+          <rect width="90" height="56" rx="10" fill="#525252"/>
+          <text x="0" y="74" fill="#FFFFFF" font-size="11" font-weight="600">Steel Border</text>
+          <text x="0" y="88" fill="#D4D4D4" font-size="10" font-family="monospace">#525252</text>
+          <text x="0" y="102" fill="#64748B" font-size="8" font-family="monospace">BORDER</text>
+        </g>
+      </g>
+    </g>
+
+    <g transform="translate(680, 36)">
+      <rect width="556" height="268" rx="16" fill="#121212" stroke="#2B2B2B" stroke-width="1.5"/>
+      <rect x="0" y="0" width="556" height="38" rx="16" fill="#1B1B1B"/>
+      <circle cx="22" cy="19" r="4.5" fill="#FF5500"/>
+      <circle cx="38" cy="19" r="4.5" fill="#525252"/>
+      <circle cx="54" cy="19" r="4.5" fill="#2B2B2B"/>
+      <text x="80" y="23" fill="#999999" font-size="11" font-family="monospace">groveil-hardware // esp32-s3</text>
+      <rect x="424" y="9" width="112" height="20" rx="10" fill="#FF5500" fill-opacity="0.2" stroke="#FF5500" stroke-width="0.8"/>
+      <text x="480" y="23" fill="#FF5500" font-size="10" font-family="monospace" font-weight="700" text-anchor="middle">ACTIVE FIRMWARE</text>
+
+      <text x="28" y="72" fill="#FF5500" font-size="11" font-family="monospace" font-weight="700" letter-spacing="1">ZERO OVERHEAD // DIRECT HARDWARE</text>
+      <text x="28" y="108" fill="#FFFFFF" font-size="24" font-weight="800">Built for the Real World.</text>
+      <text x="28" y="134" fill="#999999" font-size="13">High-torque climbing motors &amp; LoRa mesh telemetry.</text>
+
+      <rect x="28" y="162" width="150" height="42" rx="10" fill="#FF5500" filter="url(#orange-glow)"/>
+      <text x="103" y="188" fill="#000000" font-size="13" font-weight="800" text-anchor="middle">Start a Project →</text>
+
+      <rect x="190" y="162" width="124" height="42" rx="10" fill="#1B1B1B" stroke="#404040" stroke-width="1.2"/>
+      <text x="252" y="188" fill="#FFFFFF" font-size="13" font-weight="600" text-anchor="middle">Inspect Code</text>
+
+      <rect x="330" y="162" width="198" height="42" rx="10" fill="#000000" stroke="#404040" stroke-width="1.2"/>
+      <text x="346" y="180" fill="#FACC15" font-size="11" font-family="monospace" font-weight="700">MOTOR TORQUE: 8.4 NM</text>
+      <text x="346" y="195" fill="#A3A3A3" font-size="10" font-family="monospace">CANOPY HEIGHT: 6.2M</text>
+    </g>
+  </g>
+
+  <!-- ================= PALETTE 4: IMPERIAL GOLD ================= -->
+  <g transform="translate(80, 1320)" filter="url(#dark-card-shadow)">
+    <rect width="1280" height="340" rx="22" fill="#0C0E0C" stroke="#262E26" stroke-width="1.5"/>
+    <rect x="0" y="0" width="1280" height="4" rx="2" fill="#DFAB50"/>
+
+    <g transform="translate(44, 40)">
+      <rect x="0" y="0" width="200" height="24" rx="6" fill="#DFAB50" fill-opacity="0.15" stroke="#DFAB50" stroke-width="0.8"/>
+      <text x="12" y="16" fill="#DFAB50" font-size="10" font-family="monospace" font-weight="700" letter-spacing="1">OPTION 04 // LUXURY STUDIO</text>
+      
+      <text x="0" y="62" fill="#FFFFFF" font-size="26" font-weight="800">Imperial Onyx &amp; Champagne Gold</text>
+      <text x="0" y="90" fill="#8E9C8E" font-size="13" font-weight="400">Bespoke dark editorial aesthetic. Deep onyx black paired with liquid gold and pine green undertones.</text>
+
+      <g transform="translate(0, 124)">
+        <g transform="translate(0, 0)">
+          <rect width="90" height="56" rx="10" fill="#DFAB50" filter="url(#gold-glow)"/>
+          <text x="0" y="74" fill="#FFFFFF" font-size="11" font-weight="600">Champagne Gold</text>
+          <text x="0" y="88" fill="#DFAB50" font-size="10" font-family="monospace">#DFAB50</text>
+          <text x="0" y="102" fill="#64748B" font-size="8" font-family="monospace">PRIMARY</text>
+        </g>
+        <g transform="translate(106, 0)">
+          <rect width="90" height="56" rx="10" fill="#2D6A4F"/>
+          <text x="0" y="74" fill="#FFFFFF" font-size="11" font-weight="600">Deep Pine</text>
+          <text x="0" y="88" fill="#52B788" font-size="10" font-family="monospace">#2D6A4F</text>
+          <text x="0" y="102" fill="#64748B" font-size="8" font-family="monospace">ACCENT</text>
+        </g>
+        <g transform="translate(212, 0)">
+          <rect width="90" height="56" rx="10" fill="#0C0E0C" stroke="#2D3B2D" stroke-width="1.5"/>
+          <text x="0" y="74" fill="#FFFFFF" font-size="11" font-weight="600">Onyx Dark</text>
+          <text x="0" y="88" fill="#94A3B8" font-size="10" font-family="monospace">#0C0E0C</text>
+          <text x="0" y="102" fill="#64748B" font-size="8" font-family="monospace">CANVAS</text>
+        </g>
+        <g transform="translate(318, 0)">
+          <rect width="90" height="56" rx="10" fill="#141814" stroke="#2D3B2D" stroke-width="1.5"/>
+          <text x="0" y="74" fill="#FFFFFF" font-size="11" font-weight="600">Velvet Surface</text>
+          <text x="0" y="88" fill="#94A3B8" font-size="10" font-family="monospace">#141814</text>
+          <text x="0" y="102" fill="#64748B" font-size="8" font-family="monospace">SURFACE</text>
+        </g>
+        <g transform="translate(424, 0)">
+          <rect width="90" height="56" rx="10" fill="#FAF8F5"/>
+          <text x="0" y="74" fill="#FFFFFF" font-size="11" font-weight="600">Ivory White</text>
+          <text x="0" y="88" fill="#FAF8F5" font-size="10" font-family="monospace">#FAF8F5</text>
+          <text x="0" y="102" fill="#64748B" font-size="8" font-family="monospace">TYPOGRAPHY</text>
+        </g>
+      </g>
+    </g>
+
+    <g transform="translate(680, 36)">
+      <rect width="556" height="268" rx="16" fill="#141814" stroke="#2D3B2D" stroke-width="1.5"/>
+      <rect x="0" y="0" width="556" height="38" rx="16" fill="#1B221B"/>
+      <circle cx="22" cy="19" r="4.5" fill="#DFAB50"/>
+      <circle cx="38" cy="19" r="4.5" fill="#52B788"/>
+      <circle cx="54" cy="19" r="4.5" fill="#2D3B2D"/>
+      <text x="80" y="23" fill="#8E9C8E" font-size="11" font-family="monospace">groveil.studio // editorial</text>
+      <rect x="424" y="9" width="112" height="20" rx="10" fill="#DFAB50" fill-opacity="0.15" stroke="#DFAB50" stroke-width="0.8"/>
+      <text x="480" y="23" fill="#DFAB50" font-size="10" font-family="monospace" font-weight="700" text-anchor="middle">STUDIO PILOT</text>
+
+      <text x="28" y="72" fill="#DFAB50" font-size="11" font-family="monospace" font-weight="700" letter-spacing="1">AWARD-QUALITY CREATIVE TECHNOLOGY</text>
+      <text x="28" y="108" fill="#FAF8F5" font-size="24" font-weight="800">Built for the Real World.</text>
+      <text x="28" y="134" fill="#8E9C8E" font-size="13">Bespoke software architecture · Coimbatore, Tamil Nadu</text>
+
+      <rect x="28" y="162" width="150" height="42" rx="10" fill="#DFAB50" filter="url(#gold-glow)"/>
+      <text x="103" y="188" fill="#0C0E0C" font-size="13" font-weight="800" text-anchor="middle">View Groveil →</text>
+
+      <rect x="190" y="162" width="124" height="42" rx="10" fill="#1B221B" stroke="#3D4F3D" stroke-width="1.2"/>
+      <text x="252" y="188" fill="#FAF8F5" font-size="13" font-weight="600" text-anchor="middle">Let's Talk</text>
+
+      <rect x="330" y="162" width="198" height="42" rx="10" fill="#0C0E0C" stroke="#3D4F3D" stroke-width="1.2"/>
+      <text x="346" y="180" fill="#DFAB50" font-size="11" font-family="monospace" font-weight="700">HANDS-ON PILOT</text>
+      <text x="346" y="195" fill="#52B788" font-size="10" font-family="monospace">24 DEPARTMENTS LIVE</text>
+    </g>
+  </g>
+</svg>

@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import type { Project } from '../types';
-import { X, CheckCircle2, Layers, ArrowRight } from 'lucide-react';
+import { X, CheckCircle2, Layers, ArrowRight, ShieldCheck } from 'lucide-react';
 
 interface ProjectModalProps {
   project: Project | null;
@@ -13,18 +13,38 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
   onClose,
   onContactForSimilar,
 }) => {
+  // Handle ESC key press to close modal
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        onClose();
+      }
+    };
+    if (project) {
+      window.addEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = 'hidden';
+    }
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = 'unset';
+    };
+  }, [project, onClose]);
+
   if (!project) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/60 backdrop-blur-xs animate-in fade-in duration-200">
+    <div 
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/80 backdrop-blur-md animate-in fade-in duration-200"
+      onClick={onClose}
+    >
       <div 
-        className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto bg-white rounded-2xl border border-[#EAEAEA] shadow-2xl p-6 sm:p-8 space-y-6"
+        className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto bg-[#0E0E0E] rounded-2xl border border-[#262626] shadow-2xl p-6 sm:p-8 space-y-6 text-white"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-5 right-5 p-2 rounded-lg text-surface-textMuted hover:text-[#171717] hover:bg-surface-secondary transition-colors"
+          className="absolute top-5 right-5 p-2 rounded-lg text-[#A3A3A3] hover:text-white hover:bg-[#1C1C1C] transition-colors"
           aria-label="Close dialog"
         >
           <X className="w-5 h-5" />
@@ -32,48 +52,50 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
 
         {/* Modal Header */}
         <div className="pr-10">
-          <div className="flex items-center gap-2 mb-2">
-            <span className={`px-2.5 py-0.5 rounded text-[11px] font-mono font-semibold tracking-wider ${
+          <div className="flex flex-wrap items-center gap-2 mb-2">
+            <span className={`px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold tracking-wider ${
               project.status === 'LIVE'
-                ? 'bg-emerald-50 text-emerald-700 border border-emerald-100'
+                ? 'bg-[#102014] text-[#22C55E] border border-[#22C55E]/40'
                 : project.status === 'PILOT LAUNCH'
-                ? 'bg-amber-50 text-amber-700 border border-amber-100'
+                ? 'bg-[#241B08] text-[#FACC15] border border-[#FACC15]/40'
                 : project.status === 'CONCEPT'
-                ? 'bg-emerald-50 text-emerald-800 border border-emerald-200'
-                : 'bg-surface-secondary text-surface-textMuted border border-[#EAEAEA]'
+                ? 'bg-[#1E110A] text-brand-500 border border-brand-500/40'
+                : 'bg-[#181818] text-[#A3A3A3] border border-[#262626]'
             }`}>
               {project.status === 'CONCEPT' ? 'CONCEPT · PHASE 1' : project.status}
             </span>
             {project.highlight && (
-              <span className="text-xs font-mono text-brand-700 font-medium">
+              <span className="text-xs font-mono text-[#FACC15] font-medium">
                 · {project.highlight}
               </span>
             )}
           </div>
-          <h3 className="text-2xl sm:text-3xl font-bold font-display text-[#171717]">
+          <h3 className="text-2xl sm:text-3xl font-bold font-display text-white">
             {project.name} — {project.title}
           </h3>
-          <p className="mt-2 text-sm sm:text-base text-surface-textMuted leading-relaxed">
+          <p className="mt-2 text-sm sm:text-base text-[#A3A3A3] leading-relaxed">
             {project.description}
           </p>
         </div>
 
         {/* Problem vs Solution Editorial */}
         {project.fullArchitecture && (
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 p-4 rounded-xl bg-surface-secondary border border-[#EAEAEA]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 p-5 rounded-xl bg-[#141414] border border-[#262626]">
             <div>
-              <div className="text-xs font-mono font-semibold text-rose-700 uppercase mb-1">
-                The Practical Problem
+              <div className="text-xs font-mono font-semibold text-rose-500 uppercase mb-1.5 flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-rose-500"></span>
+                The Practical Bottleneck
               </div>
-              <p className="text-xs sm:text-sm text-[#333333] leading-relaxed">
+              <p className="text-xs sm:text-sm text-[#D4D4D4] leading-relaxed">
                 {project.fullArchitecture.problem}
               </p>
             </div>
             <div>
-              <div className="text-xs font-mono font-semibold text-brand-700 uppercase mb-1">
+              <div className="text-xs font-mono font-semibold text-brand-500 uppercase mb-1.5 flex items-center gap-1.5">
+                <ShieldCheck className="w-3.5 h-3.5 text-brand-500" />
                 Our Engineering Solution
               </div>
-              <p className="text-xs sm:text-sm text-[#333333] leading-relaxed">
+              <p className="text-xs sm:text-sm text-[#D4D4D4] leading-relaxed">
                 {project.fullArchitecture.solution}
               </p>
             </div>
@@ -83,15 +105,15 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
         {/* Architectural Layers */}
         {project.fullArchitecture?.stack && (
           <div className="space-y-3">
-            <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-surface-textMuted">
-              <Layers className="w-4 h-4 text-brand-700" />
-              <span>System Architecture & Technologies</span>
+            <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-[#A3A3A3]">
+              <Layers className="w-4 h-4 text-brand-500" />
+              <span>System Architecture &amp; Technologies</span>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {project.fullArchitecture.stack.map((item, idx) => (
-                <div key={idx} className="p-3 rounded-lg border border-[#EAEAEA] bg-white">
-                  <div className="text-xs font-semibold text-[#171717]">{item.layer}</div>
-                  <div className="text-xs font-mono text-brand-800 mt-0.5">{item.tools}</div>
+                <div key={idx} className="p-3.5 rounded-xl border border-[#262626] bg-[#141414]">
+                  <div className="text-xs font-semibold text-white font-display">{item.layer}</div>
+                  <div className="text-xs font-mono text-brand-500 mt-1">{item.tools}</div>
                 </div>
               ))}
             </div>
@@ -100,13 +122,13 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
 
         {/* Features Checklist */}
         <div className="space-y-3">
-          <div className="text-xs font-mono uppercase tracking-wider text-surface-textMuted">
-            Core Verified Features
+          <div className="text-xs font-mono uppercase tracking-wider text-[#A3A3A3]">
+            Core Verified Features &amp; Capabilities
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
             {project.features.map((feat, idx) => (
-              <div key={idx} className="flex items-start gap-2 text-xs text-[#333333]">
-                <CheckCircle2 className="w-3.5 h-3.5 text-brand-600 mt-0.5 flex-shrink-0" />
+              <div key={idx} className="flex items-start gap-2 text-xs text-[#D4D4D4]">
+                <CheckCircle2 className="w-3.5 h-3.5 text-brand-500 mt-0.5 flex-shrink-0" />
                 <span>{feat}</span>
               </div>
             ))}
@@ -114,16 +136,16 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
         </div>
 
         {/* Footer Actions */}
-        <div className="pt-4 border-t border-[#EAEAEA] flex flex-col sm:flex-row items-center justify-between gap-3">
-          <div className="text-xs text-surface-textMuted font-mono">
-            Designed & Maintained by Groveil Coimbatore Team
+        <div className="pt-4 border-t border-[#262626] flex flex-col sm:flex-row items-center justify-between gap-3">
+          <div className="text-xs text-[#737373] font-mono">
+            Architected &amp; Built by Groveil · Coimbatore, IN
           </div>
           <button
             onClick={() => {
               onClose();
               onContactForSimilar(project.name);
             }}
-            className="w-full sm:w-auto inline-flex items-center justify-center px-4 py-2.5 rounded-lg bg-brand-700 hover:bg-brand-800 text-white text-xs font-semibold transition-colors shadow-xs"
+            className="w-full sm:w-auto inline-flex items-center justify-center px-4 py-2.5 rounded-lg bg-brand-500 hover:bg-[#FF6B1A] text-black text-xs font-bold transition-colors shadow-xs"
           >
             <span>Discuss a Similar Solution</span>
             <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
