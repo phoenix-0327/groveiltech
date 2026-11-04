@@ -47,6 +47,7 @@ export const Contact: React.FC<ContactProps> = ({
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [submissionData, setSubmissionData] = useState<SubmissionData | null>(null);
+  const [generatedMailtoUrl, setGeneratedMailtoUrl] = useState('');
 
   const projectTypes = [
     'Web Application',
@@ -106,11 +107,37 @@ export const Contact: React.FC<ContactProps> = ({
       submittedAt: new Date().toISOString()
     };
 
+    const subject = encodeURIComponent(`Project Inquiry: ${company} — ${resolvedTypes}`);
+    const emailBody = encodeURIComponent(`Hello GROVEIL Software Studio,
+
+I would like to inquire about a software development engagement.
+
+CLIENT DETAILS:
+- Full Name: ${fullName}
+- Contact Email: ${email}
+- Company / Organisation: ${company}
+
+PROJECT SCOPE:
+- Required Service(s): ${resolvedTypes}
+- Target Timeline: ${timeline}
+
+REQUIREMENT OVERVIEW:
+${description}
+
+---
+Sent via Groveil Website Inquiry Form`);
+
+    const mailtoUrl = `mailto:${COMPANY_INFO.email}?subject=${subject}&body=${emailBody}`;
+    setGeneratedMailtoUrl(mailtoUrl);
+
+    // Trigger direct mailto link
+    window.location.href = mailtoUrl;
+
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSubmitted(true);
       setSubmissionData(payload);
-    }, 600);
+    }, 400);
   };
 
   const handleDownloadSummary = () => {
@@ -203,6 +230,16 @@ ENGINEERING COMMITMENT:
                 </div>
 
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
+                  {generatedMailtoUrl && (
+                    <a
+                      href={generatedMailtoUrl}
+                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-brand-500 hover:bg-[#FF6B1A] text-black font-bold text-xs transition-all shadow-sm active:scale-[0.98]"
+                    >
+                      <Mail className="w-4 h-4 text-black" />
+                      <span>Open in Email App</span>
+                    </a>
+                  )}
+
                   <button
                     onClick={handleDownloadSummary}
                     className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-[#181818] hover:bg-[#222] border border-[#262626] text-xs font-semibold text-white transition-colors"
@@ -414,7 +451,7 @@ ENGINEERING COMMITMENT:
                     )}
                   </button>
                   <div className="text-center text-[11px] text-[#737373] mt-2.5 font-mono">
-                    Zero spam · Strict confidentiality · Direct response from developers
+                    Direct mailto · Opens pre-filled email to groveiltechnology@gmail.com · Zero spam
                   </div>
                 </div>
               </form>
